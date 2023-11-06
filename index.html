@@ -1,0 +1,299 @@
+<html lang="pt-BR">
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+    <script src="https://kit.fontawesome.com/5a7c2184a6.js"></script>
+    <script src="script.js"></script>
+
+<link rel="stylesheet" href="style.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="/img/Redstarbird.svg">
+    <title>Project Iza</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+    
+    <header>
+        <h1>Sudoku Da Bina</h1>
+    </header>
+<div class="container">
+    <table id="sudoku-board">
+
+        <tr>
+            <td class="block0"></td>
+            <td class="block0"></td>
+            <td class="column3 block0"></td>
+            <td class="block1"></td>
+            <td class="block1"></td>
+            <td class="column6 block1"></td>
+            <td class="block2"></td>
+            <td class="block2"></td>
+            <td class="block2"></td>
+        </tr>
+
+        <tr>
+            <td class="block0"></td>
+            <td class="block0"></td>
+            <td class="column3 block0"></td>
+            <td class="block1"></td>
+            <td class="block1"></td>
+            <td class="column6 block1"></td>
+            <td class="block2"></td>
+            <td class="block2"></td>
+            <td class="block2"></td>
+        </tr>
+
+        <tr class="border-bottom">
+            <td class="block0"></td>
+            <td class="block0"></td>
+            <td class="column3 block0"></td>
+            <td class="block1"></td>
+            <td class="block1"></td>
+            <td class="column6 block1"></td>
+            <td class="block2"></td>
+            <td class="block2"></td>
+            <td class="block2"></td>
+        </tr>
+
+        <tr>
+            <td class="block3"></td>
+            <td class="block3"></td>
+            <td class="column3 block3"></td>
+            <td class="block4"></td>
+            <td class="block4"></td>
+            <td class="column6 block4"></td>
+            <td class="block5"></td>
+            <td class="block5"></td>
+            <td class="block5"></td>
+        </tr>
+
+        <tr>
+            <td class="block3"></td>
+            <td class="block3"></td>
+            <td class="column3 block3"></td>
+            <td class="block4"></td>
+            <td class="block4"></td>
+            <td class="column6 block4"></td>
+            <td class="block5"></td>
+            <td class="block5"></td>
+            <td class="block5"></td>
+        </tr>
+
+        <tr class="border-bottom">
+            <td class="block3"></td>
+            <td class="block3"></td>
+            <td class="column3 block3"></td>
+            <td class="block4"></td>
+            <td class="block4"></td>
+            <td class="column6 block4"></td>
+            <td class="block5"></td>
+            <td class="block5"></td>
+            <td class="block5"></td>
+        </tr>
+
+        <tr>
+            <td class="block6"></td>
+            <td class="block6"></td>
+            <td class='column3 block6'></td>
+            <td class="block7"></td>
+            <td class="block7"></td>
+            <td class="column6 block7"></td>
+            <td class="block8"></td>
+            <td class="block8"></td>
+            <td class="block8"></td>
+        </tr>
+
+        <tr>
+            <td class="block6"></td>
+            <td class="block6"></td>
+            <td class='column3 block6'></td>
+            <td class="block7"></td>
+            <td class="block7"></td>
+            <td class="column6 block7"></td>
+            <td class="block8"></td>
+            <td class="block8"></td>
+            <td class="block8"></td>
+        </tr>
+
+        <tr>
+            <td class="block6"></td>
+            <td class="block6"></td>
+            <td class='column3 block6'></td>
+            <td class="block7"></td>
+            <td class="block7"></td>
+            <td class="column6 block7"></td>
+            <td class="block8"></td>
+            <td class="block8"></td>
+            <td class="block8"></td>
+        </tr>
+    </table>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0rxUIEGBAv8hkhPMOFtYZc?utm_source=generator&theme=0" width="35%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+</body>
+
+<div class="container options">
+    <div id="btn-delete" class="btn">
+        <i class="bi bi-eraser-fill"></i>
+        <b>Apagar</b>
+    </div>
+    <div id="btn-reset" class="btn" style="margin-left: 25px">
+        <i class="bi bi-arrow-clockwise"></i>
+        <b>Recarregar</b>
+    </div>
+</div>
+
+<div class="container numbers">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+</div>
+<div class="container">
+    <button id="btn-verify">Verificar</button>
+</div>
+<div id="modal-container" class="modal-container">
+    <div style="color: whitesmoke;" class="modal-content">
+        <h1 style="text-align: center; padding-bottom: 20px;">
+            Obrigado Por Completar o Jogo ❤️
+        </h1>
+        <h1 style="text-align: center; padding-bottom: 20px;">
+            Feelings
+        </h1>
+        <div style="text-align: center;">
+            <div class="sector" style="background-color: rgb(54, 12, 54);">
+                <img src="img/flowers.avif" alt="">
+                <p style="padding: 20px;">Ooi, eu não sei muito bem como começar esse texto, acho que vou começar te ambientando onde estou nesse momento. <br>
+                    Hoje é quinta-feira, dia 26/10, e são exatas 19:08. Estou aqui sentado nesse singelo banquinho da recepção da UDC, poderia ser mais confortável, confesso. Então, assumo estar com um frio na barriga, na minha visão estamos em um momento bem delicado, pré Jóia, onde você vai passar 2 semanas fora e claramente fico um pouco inseguro com tudo isso, não de você sair e ficar com outras pessoas, mas sim de nessas semanas você sentir 
+                    que minha presença não faz diferença. Ainda mais depois da conversa que tivemos ontem, onde você se abriu como se sente quanto a mim e a todo o resto das coisas que te cercam. <br>
+                    Esses últimos dias tem me deixado meio "Cabreiro", principalmente desde sábado, por que eles me comprovaram algo que me deixa um pouco inquieto, que é o fato de você ter sentimentos por mim, mas estar tão confusa e perdida com tudo que tem sentido e acontecido na sua vida nos últimos meses e que não consegue se permitir curtir sem culpa, eu assumo que essa sua insegurança, me deixa com pé atrás de estar fazendo o que estou, principalmente esse projeto. <br>
+                    Mas fico com o sentimento que estou fazendo mais por mim, do que por você. E digo isso pelo fato de ser sincero comigo mesmo, não me bloquear pelo medo de como você vai reagir ou responder a isso (Até pq não estou nada confiante kk), e por me conhecer, sei que não existe forma melhor de expressar meus sentimentos e fazer você me conhecer do que materializando meus pensamentos de forma artística pra você.Eu sempre fui uma pessoa muito sentimental e se me calo quanto a meus sentimentos, me sufoco. Então meu modo de expressa-los,sempre foi através da arte, seja textos, desenhos e agora, uma pequena página onde posso misturar os dois. <br> Então, espero que você receba de braços abertos esse projeto, eu realmente fiz cada detalhe pensando em você, em momentos nossos, e em tudo que sinto em relação a ti.
+                    </p>
+            </div>
+                <div class="sector" style="background-color: rgb(31, 199, 143); ">
+                    <p style="padding: 20px; justify-content: space-around;">Eu não quero entrar em nenhum detalhe quanto a relações passadas, o que foi, já foi. A vida se move sempre para frente, e ficar preso a experiências passadas e traumatizantes, sempre vão impedir de vivermos o agora. <br>
+                        Desde que te conheci, não posso negar que minha rotina se alegrou, ter alguém tão legal e receptivo para conversar a todo momento, contar algo que acabou de acontecer, saber como foi seu dia, debater assuntos dos mais variados (Desde onde fica o cruzeiro do Sul, até o selamento do Gojo), são coisas que fazem meu dia mais feliz e de uma forma ou de outra, me ajudam a lidar com muita coisa que tem rolado na minha vida tbm. Te conhecer me fez reconectar com um lado meu que estava “adormecido” a um tempo já, sentir que trago alegria, felicidade e momentos bons para outra pessoa que gosto, e que isso de certa forma é recíproco, me motivam. 
+                        <br>Então para começar, obrigado por me colocar de volta nos eixos.
+    
+                        </p>
+                    <img src="img/gojo.jpg" alt="">
+                </div>
+            <div class="sector" style="background-color: rgb(54, 12, 54);">
+                <img src="img/isis.jpeg" alt="">
+                <p style="padding: 20px;">
+                    Aquele dia no Forja, eu tive uma crise de ansiedade porque estava começando a sentir esses sentimentos
+                    se aflorarem em mim por você e não sabia o que fazer com eles.
+                    Se expunha os ou reprimia. E acabou que precisei de um tempo para respirar e te juro,
+                    que a única pessoa que não queria que fosse lá me ajudar fosse você. Justamente para evitar de bagunçar mais minha cabeça.
+                    Mas ainda assim, foi você que apareceu, mesmo não te falando nada,
+                    você se preocupou e foi lá. A pior parte foi você conseguir me fazer sentir tranquilo,
+                    leve e que não precisava me preocupar com aquilo naquele momento, 
+                    que eu devia era aproveitar que você estava ali e te curtir.
+                    <br>E foi justamente o que eu fiz o resto da noite e dos dias seguintes.
+                    </p>
+            </div>
+            <div class="sector" style="background-color: rgb(31, 199, 143); ">
+                <p style="padding: 20px;">
+                    Iza, eu realmente gostei de você, me encantei pelo seu jeito carinhoso, sua personalidade engraçada, 
+                    nossos gostos em comum, a forma como a gente consegue se envolver com tanta facilidade, 
+                    e por mais que tenha me avisado várias vezes, acabei me deixando levar por essas e outras tantas atitudes
+                    que vc sempre demonstra ou tenta esconder, como: Os seus sorrisos bobos olhando para mim,
+                    seguidos de você fugindo com o olhar; Você xingando o nada quando percebia algum tipo de sentimento; 
+                    Você se segurando quando estamos juntos
+                    e sempre que temos que nos "despedir" vc explode esses sentimentos e desejos rapidamente
+                    e vai embora; A forma tão carinhosa e atenciosa com que você lida comigo; Suas demonstrações de carinho atavés de mordidas;
+                     E principalmente, 
+                    sentir que por mais que vc esteja se afastando e tenha deixado claro que não quer nada comigo. 
+                    Saber que você sentia algo por mim e que eu te fazia bem.
+
+                </p>
+                <img src="img/yamada_akane.avif" alt="">
+            </div>
+            <div class="sector" style="background-color: rgb(54, 12, 54);">
+                <img src="img/tanjiro.webp" alt="">
+                <p style="padding: 20px;">
+                    Te vi ontem, confesso que foi muito bom, estar perto de ti, é algo tranquilizador e instigante, pq por mais que ache mto fofo,e divertido seu jeitinho, acho ainda muito imprevisível, mas não entenda mal, isso é gostoso, não saber se a qualquer momento você vai me beijar,
+                    me abraçar ou me evitar. <br> Quanto a hoje não conversamos muito, tudo bem que você tinha bastante coisa para fazer e imagino que deve estar animada com a viagem,
+                    mas fico um pouquinho receoso, ainda mais quando penso nas coisas que você disse sobre se afastar de mim ou passar a me ignorar.
+                    Mas ainda sim, espero que você faça uma boa viagem e que te ajude a relaxar e resetar essa mente.Você teve umas últimas semanas muito intensas,para dizer o mínimo. <br> Bom, beijão e já estou com saudades de ao menos conversarmos ou só ficar olhando tua cara no discord.
+                </p>
+            </div>
+            
+            <div class="sector" style="background-color: rgb(31, 199, 143);">
+                
+                <p style="padding: 20px;">Ooi, eu não sei como passar meus sentimentos muito bem aqui,
+                    mas resumidamente, estou percebendo que seu interesse em conversar e interagir comigo está menor,
+                    e tem uns dias que vi seu tweet "hm, enjoei 😢" e a gente sabe do que você tá falando.
+                    Isso machucou mais do que esperava, pq como já deixei claro
+                    eu me apaixonei por você, não sei como é para você, mas para mim isso não acontece sempre,
+                    mas tudo bem, é algo que tenho que aceitar, aprender a lidar e vou passar
+                    a me afastar de forma gradativa.
+                    Torço muito para que mais pra frente a gente possa voltar a pelo menos ter uma amizade, 
+                    pq vc realmente é uma pessoa incrível e por minha experiência, nada “padrão” ao contrário do que você mesmo diz.
+                    <br> Eu comecei esse projeto há uns dias já, antes da primeira data que coloquei aqui, 
+                    quando a gente tava bem ainda e eu pretendia usar ele para me declarar pra ti, 
+                    mas a forma que as coisas foram rolando não ajudaram muito esse plano se concluir. 
+                    Ainda sim tenho a intenção de te mandar ele um dia, mas vou aguardar, 
+                    evitar mandar nessa época conturbada de jóia, TFG, muita demanda do trabalho e problemas de saúde. 
+                    Quem sabe mais pra frente.
+                    <br>Espero que consiga entregar seu TFG, ser aprovada, superar seus problemas e seguir bem e feliz seu caminho.
+                    <br><br> Fica bem, tá, e espero superar a falta que to de você e da sua boca.
+                    </p>
+                <img src="img/tfg.jpeg" alt="">    
+            </div>
+            <div class="sector" style="background-color: rgb(54, 12, 54);">
+               
+                <p style="padding: 20px;">Me desculpa, mas se eu não te entregar isso logo e parar de ficar trabalhando nele, só vou me machucar mais. E sinceramente, não espero nada em troca, nem mesmo uma resposta. 
+                    Eu não me arrependo de ter te conhecido. Você foi uma pessoa importante para mim, e em um momento em que eu estava precisando muito de alguém. Então quero te entregar isso para poder por um fim nesse ciclo, 
+                    e passar a superar esses sentimentos logo.
+                    <br><br>
+                    Você fala sobre sua aura de cura, mas não sinto que eu precisava de algo assim, mas talvez de um pouco de coragem, coragem essa que encontrei em ti. Coragem para encarar a vida e me tocar de que não existe só o mundinho da minha cabeça, existem pessoas incríveis por ai, esperando para serem conhecidas e te agradeço por isso.
+                    Mas no fim, quem talvez esteja precisando de cura para o coração e a mente seja você.
+                    <br><br>
+                    Eu sei que muito do que está escrito nessa página, não vai ser interpretado ou sentido por você da mesma forma que eu. Tenho noção que os sentimentos das pessoas são coisas mutáveis e totalmente únicas. Todos sabemos que mesmo que duas pessoas vivam os mesmos momentos, cada uma irá vivenciar as experiências de forma diferentes. Eu não sei qual a sua interpretação ou sentimento sobre o que rolou (nem mesmo sei se você considera que rolou algo), a única coisa que posso fazer é expor a forma como eu senti e esse é o intuito de todo esse trabalho. Espero MUITO que você consiga trabalhar e superar todos esses traumas que te tiram o sono e também espero não fazer parte deles.
+                    <br><br>
+                    
+                    Por mais que tivesse me avisado e eu dito que estaria tranquilo com isso, te ver se afastando e me evitando ta machucando mais do que esperava, ainda mais sem entender bem os motivos. Mas entendo que foi uma escolha sua e decidi respeitá-la. E acredito muito que consegui amadurecer cada vez mais emocionalmente de anos para cá, e isso me faz saber que tenho que me afastar também, porque se tem algo que não quero, é dar espaço novamente na minha vida para dúvidas, não saber os reais sentimentos dos outros quanto a mim. Não saber o quanto meus sentimentos e tempo estão sendo usados para aproveitar com alguém que realmente está ali comigo, por querer a minha companhia e não para suprir uma falta. 
+                    <br><br>
+                    Vou / Estou com saudades de ti, mas não acho correto comigo mesmo continuar insistindo em algo que alguém já deixou nítido que não quer. E nem estou falando de uma relação. 
+                    <br><br>
+                    Desejo todo sucesso do mundo pra ti Iza, que se forme, que cresça cada vez mais no escritório, melhore de todos os problemas de saúde e se torne a sua melhor versão. Saiba que vou guardar com carinho esses momentos.
+                    <br><br>
+                    Para terminar, não faço ideia se você vai julgar isso tudo como "emocionado", "problemático" ou qualquer outro rótulo besta que as pessoas tem usado. Meu objetivo era te mostrar que existem pessoas por ai que te acham incríveis, mais do que você mesmo se enxergue as vezes. Que você mesmo que com uma pequena participação, você consegue melhorar o dia delas e ser parte importante disso. Espero que ajude também a você conseguir se abrir mais com as próximas pessoas com quem for ter algum "envolvimento". Nunca terá nada melhor do que se abrir e ser recepcionado por alguém que realmente te escute e ajude a encontrar uma forma de lidar melhor com as coisas.
+                    <br><br>
+                    Por último eu queria pedir desculpas de novo, por que eu sei que o vou fazer é um pouco "egoísta", realmente queria esperar para te enviar tudo isso, pelo menos até depois da apresentação do TFG, por não saber como vai ser sua reação, mas quem não está aguentando lidar com isso sou eu.
+                    <br>
+                    Abs,<br>
+                    Kauê
+
+                    <br> <br>
+                    Ps: Nunca vou terminar Yamada se não for com você
+                    </p>
+                    </p>
+            </div>
+            <div class="sector " style="justify-content: center;">
+                <img class="peq" src="img/cafune.png" alt="">
+                <img src="img/image.png" alt="">
+                <img class="peq" src="img/core.png" alt="">
+            </div>
+            <div class="sector" style="justify-content: center;">
+                <audio controls>
+                    <source src="PORNO GAY.mp3" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                  </audio>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+
+
+
+</html>
